@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: 'pipeline'
+  description: 'a description'
+  annotations:
+    jenkins.io/job-full-name: 'Spring-pipeline'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: kislaya
