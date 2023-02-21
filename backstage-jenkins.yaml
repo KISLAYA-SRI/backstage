@@ -5,6 +5,7 @@ metadata:
   description: 'a description'
   annotations:
     jenkins.io/job-full-name: 'backstage/backstage/main'
+    jenkins.io/job-full-name: 'backstage/backstage/master'
 spec:
   type: service
   lifecycle: experimental
