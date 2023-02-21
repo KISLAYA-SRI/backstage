@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: jenkins-pipeline
+  description: Jenkins Pipeline
+  links:
+    - title: Jenkins Server
+      url: https://jenkins.publicislabs.net
+  annotations:
+    jenkins.io/job-full-name: 'template-test'
+  tags:
+    - pipeline
+    - jenkins
+spec:
+  type: service
+  lifecycle: experimental
+  owner: backstage-team-a
