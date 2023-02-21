@@ -1,0 +1,35 @@
+# template.yaml
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: create-azure-pipeline-demo
+  title: Create Azure Pipeline Test
+  description: Create Azure pipeline example
+spec:
+  owner: backstage-team-a
+  type: service
+
+  parameters:
+    - title: Fill in some steps
+      required:
+        - pipelinename
+        - token
+      properties:
+        pipelinename:
+          title: Pipeline name
+          type: string
+          description: Pipeline name
+          ui:autofocus: true
+        token:
+          title: token
+          type: string
+          description: token
+
+  steps:
+    - id: runJenkinsPipeline
+      name: Run Jenkins Pipeline
+      action: jenkins:pipeline:run
+      input:
+        pipelineName: ${{ parameters.pipelinename }}
+        token: ${{ parameters.token }}
