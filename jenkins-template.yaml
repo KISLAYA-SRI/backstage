@@ -33,3 +33,17 @@ spec:
       input:
         pipelineName: ${{ parameters.pipelinename }}
         token: ${{ parameters.token }}
+
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: https://jenkins.publicislabs.net/job/${{pipelineName}}
+        catalogInfoUrl: https://github.com/KISLAYA-SRI/backstage/blob/main/jenkins-catalog-info.yaml
+
+output:
+    links:
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps.register.output.entityRef }}
+
