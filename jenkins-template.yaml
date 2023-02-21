@@ -3,9 +3,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: create-azure-pipeline-demo
-  title: Create Azure Pipeline Test
-  description: Create Azure pipeline example
+  name: jenkins-pipeline
+  title: Run Jenkins Pipeline
+  description: Run Jenkins Pipeline
 spec:
   owner: backstage-team-a
   type: service
