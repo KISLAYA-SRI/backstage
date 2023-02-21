@@ -38,7 +38,7 @@ spec:
       name: Register
       action: catalog:register
       input:
-        repoContentsUrl: https://jenkins.publicislabs.net/job/${{pipelineName}}
+        # repoContentsUrl: https://jenkins.publicislabs.net/job/${{pipelineName}}
         catalogInfoUrl: https://github.com/KISLAYA-SRI/backstage/blob/main/jenkins-catalog-info.yaml
 
 output:
