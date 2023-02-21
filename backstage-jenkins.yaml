@@ -4,7 +4,7 @@ metadata:
   name: 'pipeline'
   description: 'a description'
   annotations:
-    jenkins.io/job-full-name: 'backstage/backstage/master'
+    jenkins.io/job-full-name: 'backstage/backstage'
 spec:
   type: service
   lifecycle: experimental
