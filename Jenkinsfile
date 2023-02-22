@@ -5,7 +5,7 @@ pipeline {
 	stage('Publish message') {
 	    steps{
               script {
-		      while:
+		      while(true):
 		      do
 			echo "Hello World! ${key}"
 		      done
