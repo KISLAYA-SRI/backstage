@@ -4,6 +4,7 @@ metadata:
   name: 'pipeline'
   description: 'a description'
   annotations:
+    github.com/project-slug: backstage
     jenkins.io/job-full-name: 'backstage/backstage/main'
 spec:
   type: service
