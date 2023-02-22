@@ -29,7 +29,7 @@ spec:
   steps:
     - id: runJenkinsPipeline
       name: Run Jenkins Pipeline
-      action: jenkins:pipeline:run
+      action: jenkins:run
       input:
         pipelineName: ${{ parameters.pipelinename }}
         token: ${{ parameters.token }}
