@@ -4,17 +4,16 @@ metadata:
   name: jenkins-pipeline
   title: Run Jenkins Pipeline
   description: Run Jenkins Pipeline
-spec:
-  owner: backstage-team-a
-  type: service
   tags:
     - jenkins
     - pipeline
+spec:
+  owner: backstage-team-a
+  type: service
   parameters:
     - title: Fill in some steps
       required:
         - pipelinename
-        - token
       properties:
         pipelinename:
           title: Pipeline name
@@ -22,7 +21,7 @@ spec:
           description: Pipeline name
           ui:autofocus: true
         key:
-          title: Pipeline parameter(key)
+          title: Pipeline parameter
           type: string
           description: Parameter for running parameterized pipeline
   steps:
