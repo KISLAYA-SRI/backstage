@@ -1,5 +1,3 @@
-# template.yaml
-
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
@@ -9,7 +7,9 @@ metadata:
 spec:
   owner: backstage-team-a
   type: service
-
+  tags:
+    - jenkins
+    - pipeline
   parameters:
     - title: Fill in some steps
       required:
@@ -21,15 +21,14 @@ spec:
           type: string
           description: Pipeline name
           ui:autofocus: true
-        token:
-          title: token
+        key:
+          title: Pipeline parameter(key)
           type: string
-          description: token
-
+          description: Parameter for running parameterized pipeline
   steps:
     - id: runJenkinsPipeline
       name: Run Jenkins Pipeline
       action: jenkins:run
       input:
         pipelineName: ${{ parameters.pipelinename }}
-        token: ${{ parameters.token }}
+        key: ${{ parameters.key }}
