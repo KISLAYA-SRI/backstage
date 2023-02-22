@@ -4,12 +4,12 @@ pipeline {
 	// Echo
 	stage('Publish message') {
 	    steps{
-              script {
-		      while(true):
+               sh '''
+		      while true
 		      do
 			echo "Hello World! ${key}"
 		      done
-              }
+                  '''
             }
 	}
    }
