@@ -5,7 +5,10 @@ pipeline {
 	stage('Publish message') {
 	    steps{
               script {
-                 echo "Hello World! ${key}"
+		      while(true)
+		      do
+			echo "Hello World! ${key}"
+		      done
               }
             }
 	}
