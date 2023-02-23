@@ -1,0 +1,38 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: jenkins-pipeline
+  title: Run Multi Parameter Jenkins Pipeline
+  description: Run Multi Parameter Jenkins Pipeline
+  tags:
+    - jenkins
+    - pipeline
+spec:
+  owner: backstage-team-a
+  type: service
+  parameters:
+    - title: Fill in some steps
+      required:
+        - pipelinename
+      properties:
+        pipelinename:
+          title: Pipeline name
+          type: string
+          description: Pipeline name
+          ui:autofocus: true
+        key:
+          title: First pipeline parameter
+          type: string
+          description: Parameter for running parameterized pipeline
+        key2:
+          title: Second pipeline parameter
+          type: string
+          description: Parameter for running parameterized pipeline
+  steps:
+    - id: runJenkinsPipeline
+      name: Run Jenkins Pipeline
+      action: jenkins:run
+      input:
+        pipelineName: ${{ parameters.pipelinename }}
+        key: ${{ parameters.key }}
+        key2: ${{ parameters.key2 }}
