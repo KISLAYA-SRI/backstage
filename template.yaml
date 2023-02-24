@@ -1,0 +1,32 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: gitlab-pipeline
+  title: Run hello-world-node Gitlab Pipeline
+  description: Run hello-world-node Gitlab Pipeline.
+  tags:
+    - gitlab
+    - pipeline
+spec:
+  owner: backstage-team-a
+  type: service
+  parameters:
+    - title: Fill in some steps
+      required:
+        - project_id
+        - ref 
+        - token
+      properties:
+        TARGET_ENV:
+          title: Pipeline parameter
+          type: string
+          description: Parameter for running GitLab pipeline
+  steps:
+    - id: runGitlabPipeline
+      name: Run GitLab Pipeline
+      action: gitlab:run
+      input:
+        project_id: 21558
+        ref: main
+        token: glptt-057d6478014a6f6af77c4415cbddb57c1c19b5c7
+        TARGET_ENV: ${{ parameters.TARGET_ENV }}
